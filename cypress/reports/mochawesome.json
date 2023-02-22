@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-02-22T14:51:17.758Z",
+    "end": "2023-02-22T14:51:42.622Z",
+    "duration": 24864,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b196ddfa-414d-47c1-b3f2-63f98685c0c5",
+      "title": "",
+      "fullFile": "cypress/integration/flipkart.spec.js",
+      "file": "cypress/integration/flipkart.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f37ecb76-cf21-48b6-aedc-6a613a29199c",
+          "title": "sc01-flipkart interview Task",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Tc01-flipkart interview task",
+              "fullTitle": "sc01-flipkart interview Task Tc01-flipkart interview task",
+              "timedOut": null,
+              "duration": 24585,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('._3704LK').type(testData.search_text);\ncy.wait(4000);\ncy.get('.lrtEPN').each(el => {\n  if (el.text().trim().includes(testData.dropdown_select)) {\n    cy.wrap(el).click({\n      force: true\n    });\n    return false;\n  }\n});\ncy.get('a.s1Q9rs').each(el => {\n  if (el.text().trim().includes(testData.book_name)) {\n    cy.wrap(el).invoke('removeAttr', 'target').click({\n      force: true\n    });\n    return false;\n  }\n});\ncy.get('._16Jk6d').invoke('text').then(txt => {\n  testData.itemprice = txt;\n});\ncy.get('._2iDkf8').each((el, index) => {\n  if (index != 0) {\n    cy.wrap(el).click({\n      force: true\n    }).should('not.be.checked');\n  }\n});\ncy.get('._1UcWw6 > ._2KpZ6l').first().scrollIntoView().click({\n  force: true\n});\ncy.wait(3000);\ncy.get('._2nQDXZ', {\n  timeout: 20000\n}).each(el => {\n  if (!el.text().trim().includes(testData.book_name)) {\n    cy.wrap(el).parent().find('._3dsJAO').eq(1).click();\n    cy.get('.FhkMJZ').click();\n  }\n});\ncy.wait(4000);\ncy.get('._2nQDXZ', {\n  timeout: 20000\n}).invoke('text').then(txt => {\n  expect(txt).to.includes(testData.book_name);\n});\ncy.get('._1WpvJ7').invoke('text').then(txt => {\n  expect(txt).to.includes(testData.itemprice);\n});",
+              "err": {},
+              "uuid": "a78a91e7-6ab2-47a1-9199-8e42952b52e8",
+              "parentUUID": "f37ecb76-cf21-48b6-aedc-6a613a29199c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a78a91e7-6ab2-47a1-9199-8e42952b52e8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 24585,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "charts": true,
+        "reportPageTitle": "My Test Suite",
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

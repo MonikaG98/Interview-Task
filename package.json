@@ -1,0 +1,20 @@
+{
+  "name": "interviewtask",
+  "version": "1.0.0",
+  "description": "Interview Task",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run --config baseUrl=https://www.flipkart.com -b chrome --headed --no-exit --reporter mochawesome"} ,
+  "keywords": [
+    "cypress",
+    "javascript"
+  ],
+  "author": "Monika",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "9.4"
+  },
+  "devDependencies": {
+    "cypress-mochawesome-reporter": "^3.3.0"
+  }
+}
